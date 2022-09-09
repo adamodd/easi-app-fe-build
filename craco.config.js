@@ -1,4 +1,7 @@
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const sassResourcesLoader = require('craco-sass-resources-loader');
+
+const smp = new SpeedMeasurePlugin();
 
 module.exports = {
   plugins: [
@@ -10,6 +13,13 @@ module.exports = {
           './src/stylesheets/_colors.scss',
           './src/stylesheets/_variables.module.scss'
         ]
+      }
+    },
+    {
+      plugin: {
+        overrideWebpackConfig: ({ webpackConfig }) => {
+          return smp.wrap(webpackConfig);
+        }
       }
     }
   ],

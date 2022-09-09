@@ -1,0 +1,73 @@
+$ npx craco start --verbose | cat
+
+...
+ SMP  ⏱
+General output time took 1 min, 9.51 secs
+
+ SMP  ⏱  Plugins
+CaseSensitivePathsPlugin took 26.68 secs
+ESLintWebpackPlugin took 10.36 secs
+IgnorePlugin took 0.756 secs
+HotModuleReplacementPlugin took 0.267 secs
+ReactRefreshPlugin took 0.176 secs
+ManifestPlugin took 0.127 secs
+HtmlWebpackPlugin took 0.004 secs
+WatchMissingNodeModulesPlugin took 0.001 secs
+ModuleNotFoundPlugin took 0 secs
+InterpolateHtmlPlugin took 0 secs
+DefinePlugin took 0 secs
+
+ SMP  ⏱  Loaders
+babel-loader took 57.55 secs
+  module count = 848
+css-loader, and
+postcss-loader, and
+resolve-url-loader, and
+sass-loader, and
+sass-resources-loader took 54.75 secs
+  module count = 75
+@pmmmwh/react-refresh-webpack-plugin, and
+babel-loader took 52.92 secs
+  module count = 356
+modules with no loaders took 13.3 secs
+  module count = 93
+@svgr/webpack, and
+file-loader took 12.7 secs
+  module count = 1
+url-loader took 7.56 secs
+  module count = 132
+file-loader took 4.88 secs
+  module count = 108
+css-loader, and
+postcss-loader, and
+resolve-url-loader, and
+sass-loader took 0.975 secs
+  module count = 3
+css-loader, and
+postcss-loader took 0.536 secs
+  module count = 1
+style-loader, and
+css-loader, and
+postcss-loader, and
+resolve-url-loader, and
+sass-loader, and
+sass-resources-loader took 0.093 secs
+  module count = 75
+html-webpack-plugin took 0.016 secs
+  module count = 1
+style-loader, and
+css-loader, and
+postcss-loader took 0.001 secs
+  module count = 1
+...
+
+
+    Attempt to build project sass files outside of webpack,
+    but not very reflective of all that's happening.
+    Lots of undefined variable errors due to missing resource loader.
+
+$ time npx sass src:$TMPDIR/easi_sass
+...
+real	0m0.800s
+user	0m0.654s
+sys	0m0.117s
